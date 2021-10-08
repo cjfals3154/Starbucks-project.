@@ -1,5 +1,31 @@
-div {
-  width: 500px;
-  height: 500px;
-  background: url("../images/logo.png");
+.container .item{
+  width: 100px;
+  height: 100px;
+  background-color: orange;
 }
+.container .item:first-child {
+  border: 2px solid red;
+}
+.shin{
+  border: 2px solid red;
+}
+
+
+
+
+/* .container{
+  
+}
+
+.container .item{
+  width: 100px;
+  height: 100px;
+  background-color:orange;
+  margin-left: 20px;
+  border: 4px solid red;
+  margin: -30px 10px;
+}
+.container .item:first-child{
+  padding: 20px;
+} */
+
