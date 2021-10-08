@@ -1,4 +1,44 @@
-.container .item{
+body{
+  margin: 20px;
+}
+
+span{
+  width: 120px;
+  height: 30px;
+  background-color: orange;
+  color: aliceblue;
+  display: block;
+}
+
+
+
+
+
+/* .parent{
+  width: 200px;
+  height: 150px;
+  background-color:rosybrown;
+  margin: 20px;
+  overflow: scroll;
+}
+.child{
+  width: 400px;
+  height: 100px;
+  background-color:orange;
+} */
+
+
+/* .shin{
+  width: 100px;
+  padding: 20px;
+  border: 1px solid red;
+  box-sizing: border-box;
+} */
+
+
+
+
+/* .container .item{
   width: 100px;
   height: 100px;
   background-color: orange;
@@ -8,7 +48,7 @@
 }
 .shin{
   border: 2px solid red;
-}
+} */
 
 
 
