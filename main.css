@@ -4,10 +4,14 @@ div{
   width: 100px;
   height: 100px;
   background-color: orange;
+  transition: width .5s, 
+  background-color 2s 6s;
+  flex: auto;
 }
-div:hover{
+div:active{
 width: 300px;
-background-color: royalblue;
+height: 100px;
+background-color: royalblue
 }
 
 
@@ -73,17 +77,6 @@ left: 50px;
 position: fixed;
   z-index: 1;
 } */
-
-
-
-
-
-
-
-
-
-
-
 
 
 
