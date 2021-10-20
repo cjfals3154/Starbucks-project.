@@ -6,6 +6,7 @@ body{
   /* 줄의 행간높이 */
   line-height: 1.4;
   font-family: 'Nanum Gothic', sans-serif;
+  height: 3000px;
 }
 /* 모든 이미지는 이제부터 인라인이 아니고 블럭요소로 만든 것 */
 img{
@@ -21,8 +22,11 @@ a{
 }
 /* HEADER */
 header{
+  width: 100%;
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
+  position: fixed;
+  /* position: relative; */
 }
 header > .inner{
   height: 120px; 
@@ -161,6 +165,7 @@ header .main-menu .item .item__contents .contents__menu > ul > li ul li{
 }
 header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover{
 color: #669900;
+cursor: pointer;
 }
 header .main-menu .item .item__contents .contents__texture{
 background-image: url("../images/main_menu_pattern.jpg");
@@ -175,4 +180,16 @@ padding: 15px 0 5px;
 header .main-menu .item .item__contents .contents__texture p{
 color: #669900;
 margin: 0px 0px 10px;
+}
+header .badges{
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+header .badges .badge{
+border-radius: 15px;
+margin-bottom: 12px;
+overflow: hidden;
+box-shadow: 6px 6px 10px rgba(0,0,0,.15);
+cursor: pointer;
 }
