@@ -20,12 +20,65 @@ a{
   margin: 0 auto;
   position: relative;
 }
+.btn{
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 5px;
+  color: #333;
+  box-sizing: border-box;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  transition: .4s;
+}
+.btn:hover{
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse{
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse:hover{
+  background-color: transparent;
+  color: #333;
+}
+.btn.btn--brown{
+  color: #592b18;
+  border-color: #592b18;
+}
+.btn.btn--brown:hover{
+  color: #fff;
+  background-color: #592b18;
+}
+.btn.btn--gold{
+  color: #d9aa8a;
+  background-color: #d9aa8a;
+}
+.btn.btn--gold:hover{
+  color: #fff;
+  background-color: #d9aa8a;
+}
+.btn.btn--white{
+  color: #fff;
+  background-color: #fff;
+}
+.btn.btn--white:hover{
+  color: #333;
+  background-color: #fff;
+}
 /* HEADER */
 header{
   width: 100%;
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
   position: fixed;
+  top: 0%;
+  z-index: 9;
+
   /* position: relative; */
 }
 header > .inner{
@@ -192,4 +245,52 @@ margin-bottom: 12px;
 overflow: hidden;
 box-shadow: 6px 6px 10px rgba(0,0,0,.15);
 cursor: pointer;
+}
+
+/* VISUAL */
+.visual{
+  margin-top: 120px;
+background-image: url(../images/visual_bg.jpg);
+background-position: center;
+}
+.visual .inner{
+height: 646px;
+}
+.visual .title{
+  position: absolute;
+  top: 64px;
+  left: -10px;
+}
+.visual .title .btn{
+  position: absolute;
+  top: 259px;
+  left: 173px;
+}
+.visual .cup1.image{
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+.visual .cup1.text{
+  position: absolute;
+  top: 20px;
+  right: 220px;
+}
+.visual .cup2.image{
+  position: absolute;
+  top: 120px;
+  right: 200px;
+}
+.visual .cup2.text{
+  position: absolute;
+  top: 300px;
+  right: 450px;
+}
+.visual .spoon{
+  position: absolute;
+  top: 420px;
+  right: 450px;
+}
+.visual .fade-in{
+  opacity: 0;
 }
