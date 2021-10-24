@@ -1,296 +1,491 @@
-/* COMMON 공통의 스타일 정의 */
-body{
-  color: #333;
+/*COMMON*/
+body {
+  font-family: 'Nanum Gothic', sans-serif;
   font-size: 16px;
   font-weight: 400;
-  /* 줄의 행간높이 */
   line-height: 1.4;
-  font-family: 'Nanum Gothic', sans-serif;
-  height: 3000px;
+  color: #333;
 }
-/* 모든 이미지는 이제부터 인라인이 아니고 블럭요소로 만든 것 */
-img{
-  display: block;
-}
-a{
+a {
   text-decoration: none;
 }
-.inner{
+img {
+  /* img(인라인 요소) 하단에 Baseline 공백을 제거 */
+  display: block;
+}
+
+/*INNER*/
+.inner {
   width: 1100px;
   margin: 0 auto;
   position: relative;
 }
-.btn{
+
+/*BUTTON*/
+.btn {
   width: 130px;
   padding: 10px;
   border: 2px solid #333;
+  border-radius: 4px;
+  color: #333;
   font-size: 16px;
   font-weight: 700;
-  border-radius: 5px;
-  color: #333;
+  text-align: center;
+  cursor: pointer;
   box-sizing: border-box;
   display: block;
-  cursor: pointer;
-  text-align: center;
   transition: .4s;
 }
-.btn:hover{
+.btn:hover {
   background-color: #333;
-  color: #fff;
+  color: #FFF;
 }
-.btn.btn--reverse{
+.btn.btn--reverse {
   background-color: #333;
-  color: #fff;
+  color: #FFF;
 }
-.btn.btn--reverse:hover{
+.btn.btn--reverse:hover {
   background-color: transparent;
   color: #333;
 }
-.btn.btn--brown{
-  color: #592b18;
-  border-color: #592b18;
+.btn.btn--brown {
+  color: #592B18;
+  border-color: #592B18;
 }
-.btn.btn--brown:hover{
-  color: #fff;
-  background-color: #592b18;
+.btn.btn--brown:hover {
+  color: #FFF;
+  background-color: #592B18;
 }
-.btn.btn--gold{
-  color: #d9aa8a;
-  background-color: #d9aa8a;
+.btn.btn--gold {
+  color: #D9AA8A;
+  border-color: #D9AA8A;
 }
-.btn.btn--gold:hover{
-  color: #fff;
-  background-color: #d9aa8a;
+.btn.btn--gold:hover {
+  color: #FFF;
+  background-color: #D9AA8A;
 }
-.btn.btn--white{
-  color: #fff;
-  background-color: #fff;
+.btn.btn--white {
+  color: #FFF;
+  border-color: #FFF;
 }
-.btn.btn--white:hover{
+.btn.btn--white:hover {
   color: #333;
-  background-color: #fff;
+  background-color: #FFF;
 }
-/* HEADER */
-header{
-  width: 100%;
-  background-color: #f6f5f0;
-  border-bottom: 1px solid #c8c8c8;
-  position: fixed;
-  top: 0%;
-  z-index: 9;
 
-  /* position: relative; */
+/*BACK TO POSITION*/
+.back-to-position {
+  opacity: 0;
+  transition: 1s;
 }
-header > .inner{
-  height: 120px; 
-  /* width: 1100px;
-  이너의 아래 속성들은 이제부터 모든 공통으로 쓰일 것이기 때문에 위에 커먼에서 정의를 한번 더 해줄껏
-  margin: 0 auto;
-  position: relative; */
+.back-to-position.to-right {
+  transform: translateX(-150px);
 }
-header .logo{
+.back-to-position.to-left {
+  transform: translateX(150px);
+}
+.show .back-to-position {
+  opacity: 1;
+  transform: translateX(0);
+}
+.show .back-to-position.delay-0 {
+  transition-delay: 0s;
+}
+.show .back-to-position.delay-1 {
+  transition-delay: .3s;
+}
+.show .back-to-position.delay-2 {
+  transition-delay: .6s;
+}
+.show .back-to-position.delay-3 {
+  transition-delay: .9s;
+}
+
+
+/*HEADER*/
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  background-color: #F6F5F0;
+  border-bottom: 1px solid #c8c8c8;
+}
+header > .inner {
+  height: 120px;
+}
+header .logo {
   height: 75px;
-  /* 부모요소 기준으로 배치하는 속성 / 또한 부모가 포지션 값이 있는지 확인 */
   position: absolute;
   top: 0;
   bottom: 0;
+  left: 0;
   margin: auto;
 }
-header .sub-menu{
+header .sub-menu {
   position: absolute;
   top: 10px;
-  right: 0px;
+  right: 0;
   display: flex;
 }
-header .sub-menu ul.menu{
-display: flex;
-font-family: Arial, sans-serif;
+header .sub-menu ul.menu {
+  font-family: Arial, sans-serif;
+  display: flex;
 }
-header .sub-menu ul.menu li{
+header .sub-menu ul.menu li {
   position: relative;
 }
-/* 가상요소 선택자 내부 앞쪽에 어떠한 내용을 추가할 수 있음 // 인라인 요소임*/
-header .sub-menu ul.menu li::before{
+header .sub-menu ul.menu li::before {
   content: "";
-  display: block;
   width: 1px;
   height: 12px;
-  background-color:#e5e5e5;
+  background-color: #e5e5e5;
   position: absolute;
   top: 0;
   bottom: 0;
   margin: auto;
 }
-header .sub-menu ul.menu li:first-child:before{
+header .sub-menu ul.menu li:first-child::before {
   display: none;
 }
-header .sub-menu ul.menu li a{
-  font-size: 12px;
+header .sub-menu ul.menu li a {
   padding: 11px 16px;
   display: block;
+  font-size: 13px;
   color: #656565;
 }
-header .sub-menu ul.menu li a:hover{
-color: #000;
+header .sub-menu ul.menu li a:hover {
+  color: #000;
 }
-header .sub-menu .search{
-height: 34px;
-position: relative;
-}
-header .sub-menu .search input{
-  width: 36px;
+header .sub-menu .search {
+  position: relative;
   height: 34px;
-  border: 1px solid #ccc;
+}
+header .sub-menu .search input {
+  width: 36px;
+  height: inherit;
   padding: 4px 10px;
+  border: 1px solid #ccc;
   box-sizing: border-box;
   border-radius: 5px;
   outline: none;
-  background-color:#fff;
+  background-color: #fff;
   color: #777;
-  transition: width .4s;
   font-size: 12px;
+  transition: width .4s;
 }
-header .sub-menu .search input:focus{
+header .sub-menu .search input:focus {
   width: 190px;
-  border-color: #690;
+  border-color: #669900;
 }
-header .sub-menu .search .material-icons{
+header .sub-menu .search .material-icons {
   height: 24px;
   position: absolute;
   top: 0;
   bottom: 0;
   right: 5px;
   margin: auto;
-  transition: .8s;
+  transition: .4s;
 }
-header .sub-menu .search.focused .material-icons{
+header .sub-menu .search.focused .material-icons {
   opacity: 0;
 }
-
-header .main-menu{
+header .main-menu {
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: 1;
   display: flex;
 }
-header .main-menu .item{
-
-}
-header .main-menu .item .item__name{
+header .main-menu .item .item__name {
   padding: 10px 20px 34px 20px;
-  font-family: arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 13px;
 }
-header .main-menu .item:hover .item__name{
-  background-color: #2c2a29;
-  color:#669900;
+header .main-menu .item:hover .item__name {
+  background-color: #2C2A29;
+  color: #669900;
   border-radius: 6px 6px 0 0;
 }
-header .main-menu .item .item__contents{
+header .main-menu .item .item__contents {
   width: 100%;
   position: fixed;
   left: 0;
   display: none;
 }
-header .main-menu .item:hover .item__contents{
+header .main-menu .item:hover .item__contents {
   display: block;
 }
-header .main-menu .item .item__contents .contents__menu{
-  background-color: #2c2a29;
+header .main-menu .item .item__contents .contents__menu {
+  background-color: #2C2A29;
 }
-header .main-menu .item .item__contents .contents__menu > ul{
-  display: flex;
+header .main-menu .item .item__contents .contents__menu > ul {
   padding: 20px 0;
+  display: flex;
 }
-header .main-menu .item .item__contents .contents__menu > ul > li{
-  width: 200px;
+header .main-menu .item .item__contents .contents__menu > ul > li {
+  width: 220px;
 }
-header .main-menu .item .item__contents .contents__menu > ul > li h4{
-  color: #fff;
-  padding: 10px 0 15px 0;
+header .main-menu .item .item__contents .contents__menu > ul > li h4 {
+  padding: 3px 0 12px 0;
   font-size: 14px;
+  color: #fff;
 }
-header .main-menu .item .item__contents .contents__menu > ul > li ul li{
-  padding: 3px 0 5px 0;
-  color: #999;
+header .main-menu .item .item__contents .contents__menu > ul > li ul li {
+  padding: 5px 0;
   font-size: 12px;
+  color: #999;
+  cursor: pointer;
 }
-header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover{
-color: #669900;
-cursor: pointer;
+header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
+  color: #669900;
 }
-header .main-menu .item .item__contents .contents__texture{
-background-image: url("../images/main_menu_pattern.jpg");
-font-size: 14px;
-height: 150px;
+header .main-menu .item .item__contents .contents__texture {
+  padding: 26px 0;
+  font-size: 12px;
+  background-image: url("../images/main_menu_pattern.jpg");
 }
-header .main-menu .item .item__contents .contents__texture h4{
-color: #999;
-font-weight: 700px;
-padding: 15px 0 5px;
+header .main-menu .item .item__contents .contents__texture h4 {
+  color: #999;
+  font-weight: 900;
 }
-header .main-menu .item .item__contents .contents__texture p{
-color: #669900;
-margin: 0px 0px 10px;
+header .main-menu .item .item__contents .contents__texture p {
+  color: #64a70b;
+  margin: 4px 0 14px;
 }
-header .badges{
+/*BADGES*/
+header .badges {
   position: absolute;
   top: 132px;
   right: 12px;
 }
-header .badges .badge{
-border-radius: 15px;
-margin-bottom: 12px;
-overflow: hidden;
-box-shadow: 6px 6px 10px rgba(0,0,0,.15);
-cursor: pointer;
+header .badges .badge {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,.15);
+  cursor: pointer;
 }
 
-/* VISUAL */
-.visual{
+
+/*VISUAL*/
+.visual {
   margin-top: 120px;
-background-image: url(../images/visual_bg.jpg);
-background-position: center;
+  background-image: url("../images/visual_bg.jpg");
+  background-position: center;
 }
-.visual .inner{
-height: 646px;
+.visual .inner {
+  height: 646px;
 }
-.visual .title{
+.visual .title {
   position: absolute;
-  top: 64px;
+  top: 88px;
   left: -10px;
 }
-.visual .title .btn{
+.visual .title .btn {
   position: absolute;
   top: 259px;
   left: 173px;
 }
-.visual .cup1.image{
+.visual .cup1.image {
   position: absolute;
-  top: 50px;
+  bottom: 0;
+  right: -47px;
+}
+.visual .cup1.text {
+  position: absolute;
+  top: 38px;
+  right: 171px;
+}
+.visual .cup2.image {
+  position: absolute;
+  bottom: 0;
+  right: 162px;
+}
+.visual .cup2.text {
+  position: absolute;
+  top: 321px;
+  right: 416px;
+}
+.visual .spoon {
+  position: absolute;
+  bottom: 0;
+  left: 275px;
+}
+.visual .fade-in {
+  opacity: 0;
+}
+
+
+/*NOTICE*/
+/*NOTICE LINE*/
+.notice .notice-line {
+  position: relative;
+}
+.notice .notice-line .bg-left {
+  width: 50%;
+  height: 100%;
+  background-color: #333;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.notice .notice-line .bg-right {
+  width: 50%;
+  height: 100%;
+  background-color: #f6f5ef;
+  position: absolute;
+  top: 0;
   right: 0;
 }
-.visual .cup1.text{
-  position: absolute;
-  top: 20px;
-  right: 220px;
+.notice .notice-line .inner {
+  height: 62px;
+  z-index: 1;
+  display: flex;
 }
-.visual .cup2.image{
-  position: absolute;
-  top: 120px;
-  right: 200px;
+.notice .notice-line .inner__left {
+  width: 60%;
+  height: 100%;
+  background-color: #333;
+  display: flex;
+  align-items: center;
 }
-.visual .cup2.text{
+.notice .notice-line .inner__left h2 {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  margin-right: 20px;
+}
+.notice .notice-line .inner__left .swiper-container {
+  height: 62px;
+  flex-grow: 1;
+}
+.notice .notice-line .inner__left .swiper-slide {
+  height: 62px;
+  display: flex;
+  align-items: center;
+}
+.notice .notice-line .inner__left .swiper-slide a {
+  color: #fff;
+}
+.notice .notice-line .inner__left .notice-line__more {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notice .notice-line .inner__left .notice-line__more .material-icons {
+  color: #fff;
+  font-size: 30px;
+}
+.notice .notice-line .inner__right {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.notice .notice-line .inner__right h2 {
+  font-size: 17px;
+  font-weight: 700;
+}
+.notice .notice-line .inner__right .toggle-promotion {
+  width: 62px;
+  height: 62px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notice .notice-line .inner__right .toggle-promotion .material-icons {
+  font-size: 30px;
+}
+/*PROMOTION*/
+.notice .promotion {
+  /*width: auto;*/
+  height: 693px;
+  background-color: #f6f5ef;
+  position: relative;
+  overflow: hidden;
+  transition: height .4s;
+}
+.notice .promotion.hide {
+  height: 0;
+}
+.notice .promotion .swiper-container {
+  /* 819px 슬라이드 3개와 그 사이 여백 10px씩 = 2477px */
+  width: calc(819px * 3 + 20px);
+  height: 553px;
   position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: calc((819px * 3 + 20px) / -2);
+}
+.notice .promotion .swiper-slide {
+  position: relative;
+  opacity: .5;
+  transition: opacity 1s;
+}
+.notice .promotion .swiper-slide-active {
+  opacity: 1;
+}
+.notice .promotion .swiper-slide .btn {
+  /*width: 130px;*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.notice .promotion .swiper-pagination {
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet {
+  background-color: transparent;
+  background-image: url("../images/promotion_slide_pager.png");
+  width: 13px;
+  height: 12px;
+  margin-right: 6px;
+  outline: none;
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet:last-child {
+  margin-right: 0;
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet-active {
+  background-image: url("../images/promotion_slide_pager_on.png");
+}
+.notice .promotion .swiper-prev,
+.notice .promotion .swiper-next {
+  width: 42px;
+  height: 42px;
+  outline: none;
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: absolute;
+  /* Swiper Container 높이의 절반만큼 끌어올림 */
+  /* 버튼 높이의 절반만큼 추가로 끌어올림 */
   top: 300px;
-  right: 450px;
+  z-index: 1;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .4s;
 }
-.visual .spoon{
-  position: absolute;
-  top: 420px;
-  right: 450px;
+.notice .promotion .swiper-prev {
+  left: 50%;
+  margin-left: -480px;
 }
-.visual .fade-in{
-  opacity: 0;
+.notice .promotion .swiper-next {
+  right: 50%;
+  margin-right: -480px;
+}
+.notice .promotion .swiper-prev:hover,
+.notice .promotion .swiper-next:hover {
+  background-color: #333;
+  color: #fff;
 }
