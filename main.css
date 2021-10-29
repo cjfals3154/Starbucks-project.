@@ -487,7 +487,7 @@ height: 0;
 .notice .promotion .swiper-prev:hover,
 .notice .promotion .swiper-next:hover{
   background-color: #333;
-  color: #fff;
+  color: #ffffff;
 }
 
 /* REWARDS */
@@ -541,7 +541,7 @@ overflow: hidden;
 }
 .youtube .youtube__area{
 width: 1920px;
-background-color: orange;
+background-color: red;
 position: absolute;
 left: 50%;
 margin-left: calc(1920px / -2);
@@ -563,4 +563,31 @@ left: 0px;
 width: 100%;
 height: 100%;
 position: absolute;
+}
+#player{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.youtube .inner{
+  width: 1920px;
+  height: 700px;
+  /* background-color: royalblue; */
+}
+.youtube .floating1{
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+.youtube .floating2{
+  position: absolute;
+  top: 350px;
+  left: 150px;
+}
+.youtube .floating3{
+  position: absolute;
+  bottom: -200px;
+  right: 0;
 }
