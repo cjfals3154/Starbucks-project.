@@ -11,4 +11,3 @@ HTML5 CSS3 JavaScript Github
 
 starbucks
 
-![image](https://user-images.githubusercontent.com/90400739/172041516-8ffa0c64-8fe9-477b-81e8-2bb5479dd4a0.png)
