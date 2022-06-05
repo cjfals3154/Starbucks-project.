@@ -10,8 +10,6 @@ Status Clon
 HTML5 CSS3 JavaScript Github
 
 
-<img src:
-
 starbucks
 
 <img width="1439" alt="스크린샷 2022-06-05 오후 5 07 55" src="https://user-images.githubusercontent.com/90400739/172041624-f609069b-bf3c-4dca-82ae-85c68ad65f4f.png">
